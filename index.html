@@ -1,0 +1,277 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <a-entity light="type: ambient; color: #BBB; intensity: .6"></a-entity>
+        
+        <a-entity light="type: hemisphere; color: #F55113; groundColor: #DC3968; intensity: .15; castShadow: true;"></a-entity>
+        
+        <a-entity light="type: point; intensity: 0.5; distance: 50; decay: 2"
+          position="-3 1.5 -.1"></a-entity>
+        
+        <a-entity light="type: point; intensity: 0.2; distance: 50; decay: 2;"
+          position="-1.2 .52 .25"></a-entity>
+        
+        <a-entity light="type: directional;
+                         color: #EEE; 
+                         intensity: 0.9; 
+                         castShadow: true; 
+                         shadowCameraTop: 5
+                         shadowCameraRight: 5
+                         shadowCameraLeft: -5
+                         shadowCameraBottom: -5" position="-7 10 -2" ></a-entity>
+        
+        
+        <a-assets>
+            <img id="ground" src="ground.jpg">
+        </a-assets>
+        <a-assets>
+            <img id="wall" src="wall.jpg">
+        </a-assets>
+        <a-assets>
+            <img id="ceiling" src="ceiling.jpg">
+        </a-assets>
+            
+        //ground
+        <a-plane shadow="cast: true; receive: true;" position="0 .5 0" rotation="-90 0 0" width="4.8" height="2.9" src="#ground" shadow="receive: true"></a-plane>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.47 .5 -.56" rotation="0 90 0" width="2.6" height=".02" depth="1.5" src="carpet.jpg"></a-box>
+        
+        //phone
+        <a-box width="0.12" depth="0.25" src="phone.jpg" position=".2 0.01 0" rotation="0 20 0"></a-box>
+        
+        //window wall
+        <a-box shadow="cast: true; receive: true;" position="-2.45 2 .88" rotation="0 90 0" width="1" height="3" depth=".4" src="#wall"></a-box>
+        <a-box shadow="cast: true; receive: true;" position="-2.45 2 -.97" rotation="0 90 0" width=".8" height="3" depth=".4" src="#wall"></a-box>
+        <a-box shadow="cast: true; receive: true;" position="-2.45 .8 -.09" rotation="0 90 0" width="1" height="1" depth=".4" src="#wall"></a-box>
+        <a-box shadow="cast: true; receive: true;" position="-2.45 3.2 -.09" rotation="0 90 0" width="1" height=".6" depth=".4" src="#wall"></a-box>
+        
+        //window
+        <a-box shadow="cast: true; receive: true;" position="-2.5 2.15 -.09" rotation="0 90 0" width="1" height=".09" depth=".15" color="EFFF8F"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-2.49 2.854 -.09" rotation="0 90 0" width="1" height=".09" depth=".15" src="windowblind.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-2.5 1.33 -.09" rotation="0 90 0" width="1" height=".09" depth=".15" color="EFFF8F"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-2.5 2 .37" rotation="0 90 0" width=".1" height="2" depth=".15" color="F6DF5C"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-2.5 2 -.55" rotation="0 90 0" width=".1" height="2" depth=".15" color="F6DF5C"></a-box>
+        
+        //outlet/cab;e
+        <a-box shadow="cast: true; receive: true;" position="-2.29 1.1 -.09" rotation="0 90 0" width=".075" height=".12" depth=".1" src="outlet.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position=".3 1.1 1.4" rotation="0 90 0" width=".075" height=".12" depth=".1" src="outlet.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position=".48 1.1 1.4" rotation="0 90 0" width=".075" height=".12" depth=".1" src="cable.jpg"></a-box>
+        
+        //power switch
+        <a-box shadow="cast: true; receive: true;" position="2.28 1.69 -.04" rotation="0 90 0" width=".075" height=".12" depth=".075" src="powerswitch.jpg"></a-box>
+        
+        //vent
+        <a-box shadow="cast: true; receive: true;" position="2.28 3.4 .685" rotation="0 90 0" width=".5" height=".15" depth=".075" src="vent.jpg"></a-box>
+        
+        //window corner box
+        <a-box shadow="cast: true; receive: true;" position="-2.3 2 1.3" rotation="0 90 0" width=".3" height="3" depth=".9" src="#wall"></a-box>
+        
+        //door wall
+        <a-plane shadow="cast: true; receive: true;" position="2.25 2 0" rotation="0 -90 0" width="3.75" height="3" src="#wall"></a-plane>
+        
+        //window right wall
+        <a-plane shadow="cast: true; receive: true;" position="0 1.8 -1.37" rotation="0 0 0" width="4.5" height="4" src="#wall"></a-plane>
+        
+        //window left wall
+        <a-plane shadow="cast: true; receive: true;" position="0 2 1.37" rotation="180 0 0" width="4.5" height="3" src="#wall"></a-plane>
+        
+        //ceiling
+        <a-plane shadow="cast: true; receive: false;" position="0 3.5 0" rotation="90 0" width="6" height="2.75" src="#ceiling"></a-plane>
+        
+        //bed post corner
+        <a-box shadow="cast: true; receive: true;" position="2.19 1.15 -1.3" src="bedwood.jpg" depth=".07" height="2.5" width="0.07"></a-box>
+        
+        //bed post door
+        <a-box shadow="cast: true; receive: true;" position="2.19 1.15 -.4" src="bedwood.jpg" depth=".07" height="2.5" width="0.07"></a-box>
+        
+        //bed post oxford
+        <a-box shadow="cast: true; receive: true;" position="-.19 1.15 -1.3" src="bedwood.jpg" depth=".07" height="2.5" width="0.07"></a-box>
+        
+        //bed post middle
+        <a-box shadow="cast: true; receive: true;" position="-.19 1.15 -.4" src="bedwood.jpg" depth=".07" height="2.5" width="0.07"></a-box>
+        
+        //bed steps door
+        <a-box shadow="cast: true; receive: true;" position="2.17 .7 -.84" src="bedstep.jpg" depth=".81" height=".12" width="0.04"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="2.17 1.02 -.84" src="bedstep.jpg" depth=".81" height=".12" width="0.04"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="2.17 1.34 -.84" src="bedstep.jpg" depth=".81" height=".12" width="0.04"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="2.17 1.66 -.84" src="bedstep.jpg" depth=".81" height=".12" width="0.04"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="2.17 1.98 -.84" src="bedstep.jpg" depth=".81" height=".12" width="0.04"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="2.17 2.3 -.84" src="bedstep.jpg" depth=".81" height=".12" width="0.04"></a-box>
+        
+        
+        //bed steps middle
+        <a-box shadow="cast: true; receive: true;" position="-.197 .7 -.84" src="bedstep.jpg" depth=".81" height=".12" width="0.04"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-.197 1.02 -.84" src="bedstep.jpg" depth=".81" height=".12" width="0.04"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-.197 1.34 -.84" src="bedstep.jpg" depth=".81" height=".12" width="0.04"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-.197 1.66 -.84" src="bedstep.jpg" depth=".81" height=".12" width="0.04"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-.197 1.98 -.84" src="bedstep.jpg" depth=".81" height=".12" width="0.04"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-.197 2.3 -.84" src="bedstep.jpg" depth=".81" height=".12" width="0.04"></a-box>
+        
+        //mattress
+        <a-box shadow="cast: true; receive: true;" position="1. 2.35 -.84" src="bedsheet.jpg" depth=".81" height=".3" width="2.5"></a-box>
+        
+        //mattress springs
+        <a-box shadow="cast: true; receive: true;" position="1. 2.2 -.84" src="bedsprings.jpg" depth=".81" height=".01" width="2.5"></a-box>
+        
+        //mattress box case short door
+        <a-box shadow="cast: true; receive: true;" position="2.18 2.19 -.84" color="#141419" depth=".81" height=".003" width=".05"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-.22 2.19 -.84" color="#141419" depth=".81" height=".003" width=".05"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="1 2.19 -.46" color="#141419" depth=".05" height=".003" width="2.5"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="1 2.19 -1.22" color="#141419" depth=".05" height=".003" width="2.5"></a-box>
+        
+        //door
+        <a-box shadow="cast: true; receive: true;" position="2.25 1.5 1.2" color="#14265A" depth=".07" height="2.53" width="0.03"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="2.25 1.5 .2" color="#14265A" depth=".07" height="2.53" width="0.03"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="2.25 2.73 .7" color="#14265A" depth="1" height=".07" width="0.03"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="2.25 1.55 .7" src="door.jpg" depth=".9" height="2.38" width="0.02"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="2.249 0.51 .7" color="black" depth=".9" height="0.02" width="0.02"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="2.26 1.5 .68" color="black" depth="1" height="2.4" width="0.03"></a-box>
+        
+        //door hinges
+        <a-cylinder shadow="cast: true; receive: true;" position="2.23 .85 1.155" radius=".012" height=".15" src=#wall ></a-cylinder>
+        
+        <a-cylinder shadow="cast: true; receive: true;" position="2.23 1.62 1.155" radius=".012" height=".15" src=#wall ></a-cylinder>
+        
+        <a-cylinder shadow="cast: true; receive: true;" position="2.23 2.375 1.155" radius=".012" height=".15" src=#wall ></a-cylinder>
+        
+        //floor lining
+        <a-box shadow="cast: true; receive: true;" position="2.25 .53 -.82" color="#0F1C43" depth="2" height=".15" width="0.01"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="2.25 .53 1.73" color="#0F1C43" depth="1" height=".15" width="0.01"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="0 .53 1.36" color="#0F1C43" depth="0.01" height=".15" width="5"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.85 .53 1.65" color="#0F1C43" depth="1" height=".15" width="0.01"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-2.25 .53 .1" color="#0F1C43" depth="3" height=".15" width="0.01"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="0 .53 -1.37" color="#0F1C43" depth="0.01" height=".15" width="5"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-2.35 .53 1.15" color="#0F1C43" depth="0.01" height=".15" width="1"></a-box>
+        
+        //wardrobe
+        <a-box shadow="cast: true; receive: true;" position="-1.25 1.5 1.1" rotation="0 90 0" width=".5" height="2.3" depth="1.1" src="wardrobe.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.5 1.59 .83" rotation="0 90 0" width=".03" height="1.95" depth="0.5" src="wardrobe.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-.96 1.59 .83" rotation="0 90 0" width=".03" height="1.95" depth="0.5" src="wardrobe.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.25 2.64 1.1" rotation="0 90 0" width=".55" height="0.05" depth="1.15" src="wardrobe.jpg"></a-box>
+        
+        //wardrobe hinges
+        <a-cylinder shadow="cast: true; receive: true;" position="-.7 2.42 .83" radius=".012" height=".09" color="#261a0d" ></a-cylinder>
+        
+        <a-cylinder shadow="cast: true; receive: true;" position="-.7 1.84 .83" radius=".012" height=".09" color="#261a0d" ></a-cylinder>
+        
+        <a-cylinder shadow="cast: true; receive: true;" position="-.7 1.29 .83" radius=".012" height=".09" color="#261a0d" ></a-cylinder>
+        
+        <a-cylinder shadow="cast: true; receive: true;" position="-.7 0.72 .83" radius=".012" height=".09" color="#261a0d" ></a-cylinder>
+        
+        <a-cylinder shadow="cast: true; receive: true;" position="-1.77 2.42 .815" radius=".012" height=".09" color="#261a0d" ></a-cylinder>
+        
+        <a-cylinder shadow="cast: true; receive: true;" position="-1.77 1.84 .815" radius=".012" height=".09" color="#261a0d" ></a-cylinder>
+        
+        <a-cylinder shadow="cast: true; receive: true;" position="-1.77 1.29 .815" radius=".012" height=".09" color="#261a0d" ></a-cylinder>
+        
+        <a-cylinder shadow="cast: true; receive: true;" position="-1.77 0.72 .815" radius=".012" height=".09" color="#261a0d" ></a-cylinder>
+        
+        
+        //wardrobe drawings
+        <a-box shadow="cast: true; receive: true;" position="-.73 1.8 1.04" rotation="0 90 0" width=".23" height=".29" depth="0.01" color="#1E1517"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-.729 1.8 1.04" rotation="0 90 0" width=".16" height=".23" depth="0.01" src="yellowdood.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-.73 2.2 1.04" rotation="0 90 0" width=".23" height=".2" depth="0.01" color="#1E1517"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-.729 2.2 1.04" rotation="0 90 0" width=".17" height=".12" depth="0.01" src="whitedood.jpg"></a-box>
+        
+        //dresser
+        <a-box shadow="cast: true; receive: true;" position="1.55 .8 -1" rotation="0 90 0" width=".7" height="1" depth="1" src="dresser.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="1.53 .79 -.69" rotation="0 90 0" width=".1" height="1" depth=".9" src="drawer.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="1.55 1.3 -1" rotation="0 90 0" width=".75" height=".03" depth="1.05" src="dresser.jpg"></a-box>
+        
+        //desk
+        <a-box shadow="cast: true; receive: true;" position="1.02 .8 -1" rotation="0 90 0" width=".7" height="1" depth=".03" src="dresser.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position=".49 .8 -1" rotation="0 90 0" width=".7" height="1" depth=".03" src="dresser.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-0.135 .8 -1" rotation="0 90 0" width=".7" height="1" depth=".03" src="dresser.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position=".73 .79 -.705" rotation="0 90 0" width=".1" height="1" depth=".5" src="drawer.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position=".4 .7 -1.25" rotation="0 90 0" width=".01" height=".15" depth="1.3" src="dresser.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position=".42 1.3 -1" rotation="0 90 0" width=".75" height=".03" depth="1.15" src="dresser.jpg"></a-box>
+        
+        //laptop
+        <a-box shadow="cast: true; receive: true;" position=".2 1.32 -.9" rotation="0 -20 0" width=".32" height=".005" depth=".2" src="keyboard.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position=".245 1.41 -1.03" rotation="70 -20 0" width=".32" height=".005" depth=".2" color="#10100a"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position=".245 1.41 -1.03" rotation="70 -20 0" width=".275" height=".005" depth=".175" src="screen.jpg"></a-box>
+        
+        //refrigerator
+        <a-box shadow="cast: true; receive: true;" position="1.25 1.595 -.94" rotation="0 90 0" width=".5" height=".5" depth=".5" color="#0E0A0B"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="1.2 1.595 -.68" rotation="0 90 0" width=".03" height=".45" depth=".45" color="#0E0A0B"></a-box>
+        
+        //eisel
+        <a-box shadow="cast: true; receive: true;" position="-1.77 1.4984 -.65" rotation="0 120 12" width=".49" height=".14" depth=".02" src="eisel.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.37 1.5 -.9" rotation="0 120 12" width=".55" height=".14" depth=".02" src="eisel.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.445 1.448 -.56" rotation="12 29 -0" width=".49" height=".14" depth=".02" src="eisel.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.69 1.547 -.97" rotation="13 35 .5" width=".47" height=".14" depth=".02" src="eisel.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.6 1.47 -.85" rotation="13 35 .5" width=".47" height=".04" depth=".02" src="eisel.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.8 .9 -1.1" rotation="30 40 6" width=".02" height="1.3" depth=".02" src="eisel.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.07 .9 -.66" rotation="0 -10 20" width=".02" height="1.1" depth=".02" src="eisel.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.7 .9 -.31" rotation="-17 25 -10" width=".02" height="1.1" depth=".02" src="eisel.jpg"></a-box>
+        
+        //drawing
+        <a-box shadow="cast: true; receive: true;" position="-1.47 1.8 -.65" rotation="-12 29 0" width=".45" height=".6" depth=".035" src="eisel.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.45 1.8 -.63" rotation="-12 29 0" width=".4" height=".6" depth=".02" src="drawing.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.47 2 -.7" rotation="-12 29 0" width=".02" height="1" depth=".035" src="eisel.jpg"></a-box>
+        
+        <a-box shadow="cast: true; receive: true;" position="-1.49 2.5 -.8" rotation="-12 29 0" width=".2" height=".05" depth=".035" src="eisel.jpg"></a-box>
+        
+        
+        <a-sky src="northave.jpg"></a-sky>
+    </a-scene>
+  </body>
+</html>
